@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="boy.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/boy.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
 	<title>mock login</title>
 	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
 </head>
@@ -23,5 +24,25 @@
 	</form>
 	<center><h3>Lets put a smile on that face</h3></center>
 </div>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+ 
+<script type="text/javascript">
+	$(document).ready(function(){
+      $("#login").click(function(){
+      	var user=$("#username").val();
+      	var pas=$("#password").val();
+        // var store={
+        // 	       'username':zairza,
+        // 	       'password':itssexx
+        // }
+        if (user="zairza"&&pas=="itssexx") {
+        	console.log("yahoo");
+        }
+      });
+	});
+</script>
 </body>
 </html>
