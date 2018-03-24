@@ -8,7 +8,17 @@ body{
 	font-family:'Lato',sans-serif;
 }
 
- 
+ .loggedin input{
+ 	margin-left: 13.5%;
+ 	height: 30px;
+ 	width: 35px;
+ 	padding:0px 0px 0px 5px;
+ 	color: black;
+ 	background: white;
+ 	display: inline-block;
+ 	border-radius: 5px;
+ 	border-color: white;
+ }
 
 .login_box{
 	width: 450px;

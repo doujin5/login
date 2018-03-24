@@ -7,9 +7,12 @@
 	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
 </head>
 <body>
+	<div class="loggedin">
+		<p>Users logged in</p>
+		<input type="text" name="logged" id="logged" readonly="">
+	</div>
 <div class="login_box">
 	<h2><i class="fas fa-cogs" colour:"white"></i>L O G I N</h2>
-	<form>
 		<p>Username</p>
 		<center>
 		<input type="text" name="username" id="username" placeholder="enter user name">
@@ -21,7 +24,6 @@
 		<br>
 		<br>
 		<button id="login">login</button>
-	</form>
 	<center><h3>Lets put a smile on that face</h3></center>
 </div>
 <script
@@ -31,16 +33,28 @@
  
 <script type="text/javascript">
 	$(document).ready(function(){
+	  $.ajax({
+	  	url:'/get_count',
+	  	method : 'GET',
+	  	success : function(data){
+	  		console.log(data)
+	  		console.log($('#logged'))
+	  		$('#logged').attr('value',data);
+	  	}
+	  })
       $("#login").click(function(){
-      	var user=$("#username").val();
-      	var pas=$("#password").val();
-        // var store={
-        // 	       'username':zairza,
-        // 	       'password':itssexx
-        // }
-        if (user="zairza"&&pas=="itssexx") {
-        	console.log("yahoo");
-        }
+      	var user_details ={	'username':$("#username").val(),
+      						'password':$("#password").val()
+      					};
+
+	      $.ajax({
+	      	url:"/",
+	      	method:"post",
+	      	data:user_details,
+	      	success:function(data){
+	      	window.location = data;
+	      	}
+      	});
       });
 	});
 </script>
